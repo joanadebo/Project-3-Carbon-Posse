@@ -1,5 +1,6 @@
 # Carbon Posse
 # Project-3-Group-14
+***
 ## Background
 
 ![image](https://user-images.githubusercontent.com/95774386/210461637-9d48d0f5-fd45-4d93-87bf-f29edfc99241.png)
