@@ -1,4 +1,4 @@
-Country,Code,CO2 emission (Tons),Population(2022),Area,Year,Density(km2),% of World  (demical form)
+Country,Code,CO2_emission_in_tons,Population_in_2022,Area,Year,Density_in_km2,percent_of_World_demicals
 Afghanistan,AF,0,41128771,652230,1750,63,0.004
 Afghanistan,AF,0,41128771,652230,1751,63,0.004
 Afghanistan,AF,0,41128771,652230,1752,63,0.004
