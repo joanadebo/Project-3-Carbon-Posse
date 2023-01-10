@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang=“en”>
+<head>
+  <meta charset=“UTF-8">
+  <meta name=“viewport” content=“width=device-width, initial-scale=1.0">
+  <meta http-equiv=“X-UA-Compatible” content=“ie=edge”>
+  <title>World C02 Emissions</title>
+  <!-- Leaflet CSS
+  <link rel=“stylesheet” href=“https://unpkg.com/leaflet@1.6.0/dist/leaflet.css”
+    integrity=“sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==”
+    crossorigin=“” /> -->
+  <!-- Our CSS -->
+  <!-- <link rel=“stylesheet” type=“text/css” href=“static/style.css”> -->
+  <!-- Chartist CSS -->
+  <!-- <link rel=“stylesheet” href=“https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css”>
+    <script src=“https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js”></script> -->
+  <!-- <script src=“https://code.jquery.com/jquery-3.6.1.min.js”></script> -->
+</head>
+<body>
+  <button id=“my_button”></button>
+  <div id = “my_div”></div>
+  <!-- The div that holds our map -->
+  <div id=“map”></div>
+  <!-- Leaflet JS
+
+  <script src=“https://d3js.org/d3.v5.min.js”></script> -->
+  <!-- API key -->
+  <!-- <script type=“text/javascript” src=“static/js/config.js”></script>
+  Our JavaScript -->
+  
+  <!-- Chartist JS
+  <div class=“ct-chart ct-perfect-fourth”></div>
+    <script>
+      var getNames = $.get(“/api/v1.0/countries”)
+      getData.done(function(country_list) {
+        var data = {
+            // A labels array that can contain any sort of values
+            labels: [all_countries.country_list],
+            // Our series array that contains series objects or in this case series data arrays
+            series: [
+              all_countries_country_list
+            ]
+          };
+              var options = {
+                  width:800,
+                  height : 600
+              }
+          // Create a new line chart object where as first parameter we pass in a selector
+          // that is resolving to our chart container element. The Second parameter
+          // is the actual data object.
+          var myChart = new Chartist.Line(‘.ct-chart’, data);
+      });
+ -->
+</body>
+<script src=“static/main.js”></script>
+</html>
