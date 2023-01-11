@@ -1,5 +1,7 @@
 console.log("Hello World")
 
+$('#world-map').vectorMap();
+
 const api_url = "/api/v1.0/countries";
 
 // function update_my_div(){
