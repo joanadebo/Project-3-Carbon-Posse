@@ -1,11 +1,8 @@
-
 # import numpy as np
-
 # import sqlalchemy
 # from sqlalchemy.ext.automap import automap_base
 # from sqlalchemy.orm import Session
 # from sqlalchemy import create_engine, func
-
 # from flask import Flask, jsonify
 
 # #################################################
@@ -53,6 +50,15 @@
 #     all_countries = list(np.ravel(results))
 
 #     return jsonify(all_countries)
+
+#   # for i in results:
+#         print (i)
+# # print(results)
+# #     # results = session.query(Emissions.Country).distinct().all()
+
+# #     # Convert list of tuples into normal list
+# #     all_countries = list(np.ravel(results))
+# #     return jsonify(all_countries)
 
 # if __name__ == '__main__':
 #     app.run(debug=True)
@@ -115,14 +121,68 @@ def year_one():
     # emissions_1750 = dict(np.ravel(co2_results))
     session.close()
     return jsonify(co2_results)
-# # for i in results:
-#         print (i)
-# # print(results)
-# #     # results = session.query(Emissions.Country).distinct().all()
 
-# #     # Convert list of tuples into normal list
-# #     all_countries = list(np.ravel(results))
-# #     return jsonify(all_countries)
+@app.route("/api/v1.0/1800")
+def year_two():
+    # Create our session (link) from Python to the DB
+    session = Session(engine)
+    co2_1800 = engine.execute("SELECT COUNTRY, co2_emission_in_tons FROM emissions WHERE YEAR = 1800;").fetchall()
+    co2_1800 = [dict(r) for r in co2_1800]
+    # emissions_1750 = dict(np.ravel(co2_results))
+    session.close()
+    return jsonify(co2_1800)
+
+
+@app.route("/api/v1.0/1850")
+def year_three():
+    # Create our session (link) from Python to the DB
+    session = Session(engine)
+    co2_1850 = engine.execute("SELECT COUNTRY, co2_emission_in_tons FROM emissions WHERE YEAR = 1850;").fetchall()
+    co2_1850 = [dict(r) for r in co2_1850]
+    # emissions_1750 = dict(np.ravel(co2_results))
+    session.close()
+    return jsonify(co2_1850)
+
+
+@app.route("/api/v1.0/1900")
+def year_four():
+    # Create our session (link) from Python to the DB
+    session = Session(engine)
+    co2_1900 = engine.execute("SELECT COUNTRY, co2_emission_in_tons FROM emissions WHERE YEAR = 1900;").fetchall()
+    co2_1900 = [dict(r) for r in co2_1900]
+    # emissions_1750 = dict(np.ravel(co2_results))
+    session.close()
+    return jsonify(co2_1900)
+
+@app.route("/api/v1.0/1950")
+def year_five():
+    # Create our session (link) from Python to the DB
+    session = Session(engine)
+    co2_1950 = engine.execute("SELECT COUNTRY, co2_emission_in_tons FROM emissions WHERE YEAR = 1950;").fetchall()
+    co2_1950 = [dict(r) for r in co2_1950]
+    # emissions_1750 = dict(np.ravel(co2_results))
+    session.close()
+    return jsonify(co2_1950)
+
+@app.route("/api/v1.0/2000")
+def year_six():
+    # Create our session (link) from Python to the DB
+    session = Session(engine)
+    co2_2000 = engine.execute("SELECT COUNTRY, co2_emission_in_tons FROM emissions WHERE YEAR = 2000;").fetchall()
+    co2_2000 = [dict(r) for r in co2_2000]
+    # emissions_1750 = dict(np.ravel(co2_results))
+    session.close()
+    return jsonify(co2_2000)
+
+@app.route("/api/v1.0/2020")
+def year_seven():
+    # Create our session (link) from Python to the DB
+    session = Session(engine)
+    co2_2020 = engine.execute("SELECT COUNTRY, co2_emission_in_tons FROM emissions WHERE YEAR = 2020;").fetchall()
+    co2_2020 = [dict(r) for r in co2_2020]
+    # emissions_1750 = dict(np.ravel(co2_results))
+    session.close()
+    return jsonify(co2_2020)
+
 if __name__ == '__main__':
     app.run(debug=True)
- 
