@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Carbon Posse: World C02 Emissions</title>
+  
+  <!-- Leaflet CSS -->
+  <link rel=“stylesheet” href=“https://unpkg.com/leaflet@1.6.0/dist/leaflet.css”
+  integrity=“sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==”
+  crossorigin=“” />
+
+  <!-- JQuery CSS (from template...we can remove once we get going further)
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script> -->
+
+   <!-- Dummy TEST -->
+  <script src="emissions.js"></script>
+
+  <!-- <script src="js/jquery-1.11.0.min.js"></script> -->
+
+  <!-- Bootstrap CSS (from example)-->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  
+  <!-- Our CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Chartist CSS
+  <link rel=“stylesheet” href=“https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css”>
+  <script src=“https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js”></script>
+  <script src=“https://code.jquery.com/jquery-3.6.1.min.js”></script> -->
+
+
+  <!-- Chart.js -->
+  <script
+  src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
+  </script>
+
+
+</head>
+<body>
+
+   <!-- Title container ( Title + Slogan) -->
+  <div class="container-fluid">
+    <div class="row">
+       <div class="col-sm-12 toppart">
+          <p>Carbon POSSE: <span class="health">World C02 Emissions</span></p>
+       </div>
+    </div>
+    <div class="row">
+       <div class="col-sm-12 slogan">
+
+          <p> OUR PURPOSE </p>
+       </div>
+ 
+    </div>
+
+   <!-- Project Background Container -->
+    <div class="row">
+       <div class="col whatwedo">
+          <p class="whitetext slightlybigger"> Carbon dioxide (CO2) emissions for the production of energy and materials come from a variety of sources and fuel types, including coal, oil, gas, cement production, and gas flaring. As both domestic and global energy systems have developed through centuries and decades, so has the spatial and temporal distribution of the contribution of diverse fuel sources to CO2 emissions. In this project, we depict the breakdown of CO2 emissions by country overtime, along with historical and recent data on the major CO2 emitters and comparisons when per capita adjustments are taken into account.
+          </p>
+          <br>
+       </div>
+       <div class="col wwdpic">
+          <img class="img-fluid " src="https://user-images.githubusercontent.com/95774386/210461637-9d48d0f5-fd45-4d93-87bf-f29edfc99241.png" alt="Random C02 Emissions inspirational photo" />
+       </div>
+    </div>
+   
+<!-- Main Container for Charts/Content -->
+    <div>
+      <br>
+       <div class="container-fluid whiteback ">
+         <div class= "row" >
+            <!-- 4 Fun Facts About C0 Emissions/Impact -->
+            <div class="whenyouvisit slogan">
+               <p>4 Fun Facts About C0 Emissions/Impact: </p>
+            </div>   
+         </div> 
+        <div class= "row"  >
+         <div class="col-sm-3 somepad">
+            <div class=" flitskaart whitetext">
+               <p class="ptext"><i class="  fa fa-4x fa-heartbeat"></i></p>
+            </div>
+         </div>
+         <div class="col-sm-3 somepad">
+            <div class=" flitskaart1 whitetext">
+               <p class="ptext1"><i class="  fa fa-5x fa-wheelchair"></i></p>
+            </div>
+         </div>
+         <div class="col-sm-3 somepad">
+
+            <div class=" flitskaart2 whitetext">
+               <p class="ptext2"><i class="  fa fa-5x fa-stethoscope"></i></p>
+            </div>
+         </div>
+         <div class="col-sm-3 somepad">
+
+            <div class=" flitskaart3 whitetext">
+               <p class="ptext3"><i class="  fa fa-5x fa-user-md"></i></p>
+            </div>
+
+        </div>
+          
+          </div>
+ 
+       </div>
+    </div>
+  
+       <!-- Adding in page breaks -->
+    <br>
+    <br>
+    <br>
+
+ <!-- Chart 1 Stuff (Map Layers, Dropdown by Year): -->
+  <div>
+   <div class="container-fluid whiteback ">
+     <div class= "row" >
+      
+       
+        <div class="whenyouvisit slogan">
+           <p>Chart 1 Stuff (Map Layers, Dropdown by Year): </p>
+        </div>   
+     </div> 
+
+      <div style="width: 800px;"><canvas id="ourChart"></canvas></div>
+
+
+
+
+    <!-- <div class= "row"  >
+     <div class="col somepad">
+        <div class=" flitskaart whitetext">
+           <p class="ptext"><i class="  fa fa-4x fa-question"></i></p>
+        </div>
+     </div>
+     <div class="col somepad">
+        <div class=" flitskaart1 whitetext">
+           <p class="ptext1"><i class="  fa fa-5x fa-question"></i></p>
+        </div>
+     </div>
+     <div class="col somepad">
+
+        <div class=" flitskaart2 whitetext">
+           <p class="ptext2"><i class="  fa fa-5x fa-question"></i></p>
+        </div>
+     </div>
+     <div class="col somepad">
+
+        <div class=" flitskaart3 whitetext">
+           <p class="ptext3"><i class="  fa fa-5x fa-question"></i></p>
+        </div> -->
+
+    </div>
+      
+      </div>
+
+   </div>
+   
+</div>
+
+   <!-- Adding in page breaks -->
+<br>
+<br>
+<br>
+
+   <div>
+      <div class="container-fluid whiteback ">
+        <div class= "row" >
+
+           <!-- Chart 2 Stuff (Top 10-20 Emissions by Country): -->
+           <div class="whenyouvisit slogan">
+              <p>Chart 2 Stuff (Top 10-20 Emissions by Country): </p>
+           </div>   
+        </div> 
+       <div class= "row"  >
+        <div class="col somepad">
+           <div class=" flitskaart whitetext">
+              <p class="ptext"><i class="  fa fa-4x fa-heartbeat"></i></p>
+           </div>
+        </div>
+        <div class="col somepad">
+           <div class=" flitskaart1 whitetext">
+              <p class="ptext1"><i class="  fa fa-5x fa-wheelchair"></i></p>
+           </div>
+        </div>
+        <div class="col somepad">
+
+           <div class=" flitskaart2 whitetext">
+              <p class="ptext2"><i class="  fa fa-5x fa-stethoscope"></i></p>
+           </div>
+        </div>
+        <div class="col somepad">
+
+           <div class=" flitskaart3 whitetext">
+              <p class="ptext3"><i class="  fa fa-5x fa-user-md"></i></p>
+           </div>
+
+       </div>
+         
+         </div>
+
+      </div>
+      
+   </div>
+</div>
+
+ </div>
+
+   <!-- Adding in page breaks -->
+ <br>
+ <br>
+ <br>
+
+   <!-- About Us Section -->
+<div class = "container-fluid"   >
+
+   <div class="row">
+      <div>
+         <p class="sloganadj-fluid">Meet your Engineers:</p>
+      </div>
+      <div class="col">
+         <div class="circle-container">
+            <div class="outer-ring"></div>
+            <!-- Used for more of a gyroscope type effect
+     <div class="outer-outer-ring"></div>
+     -->
+   
+            <div class="circle">
+               <div class="front">
+                  <p>BRANDYN</p>
+               </div>
+                <!-- Photo of ourselves will display once you hover over the circles -->
+               <div span class="back">
+
+                  <span class="circle-image">
+                     <img src="https://github.com/joanadebo/Project-3-Carbon-Posse/blob/main/Webpage_Brandyn_Joan/Images/Brandyn_photo.jpg?raw=true"/>
+                   </span>
+
+
+                  <i class="back-logo fa fa-5x fa-user"></i>
+               </div>
+            </div>
+   
+   
+         </div>
+      </div>
+   
+      <div class="col">
+         <div class="circle-container">
+            <div class="outer-ring"></div>
+            <!-- Used for more of a gyroscope type effect
+     <div class="outer-outer-ring"></div>
+     -->
+            <div class="circle">
+               <div class="front">
+                  <p>JOAN</p>
+               </div>
+                <!-- Photo of ourselves will display once you hover over the circles -->
+               <div span class="back">
+
+                  <span class="circle-image">
+                     <img src="https://github.com/joanadebo/Project-3-Carbon-Posse/blob/main/Webpage_Brandyn_Joan/Images/IMG_0067.JPG?raw=true"/>
+                   </span>
+
+
+                  <i class=" back-logo fa fa-5x fa-user"></i>
+               </div>
+            </div>
+   
+   
+         </div>
+   
+      </div>
+   
+   
+      <div class="col">
+         <div class="circle-container">
+            <div class="outer-ring"></div>
+             <!-- Used for more of a gyroscope type effect
+            <div class="outer-outer-ring"></div>
+             -->
+            <div class="circle">
+               <div class="front">
+                  <p>TANNER</p>
+               </div>
+               <!-- Photo of ourselves will display once you hover over the circles -->
+               <div span class="back">
+
+                  <span class="circle-image">
+                     <img src="https://github.com/joanadebo/Project-3-Carbon-Posse/blob/main/Webpage_Brandyn_Joan/Images/tanner_photo.jpeg?raw=true"/>
+                   </span>
+
+                  <i class=" back-logo fa fa-5x fa-user"></i>
+               </div>
+            </div>
+         </div>
+      </div>
+   
+      <div class="col">
+         <div class="circle-container">
+            <div class="outer-ring"></div>
+            <!-- Used for more of a gyroscope type effect
+     <div class="outer-outer-ring"></div>
+     -->
+            <div class="circle">
+               <div class="front">
+                  <p>BRONWYN</p>
+               </div>
+               <div span class="back">
+
+                  <span class="circle-image">
+                     <img src="https://media.licdn.com/dms/image/C4D03AQFSYy5mK-dzSA/profile-displayphoto-shrink_800_800/0/1631284685830?e=1678924800&v=beta&t=HsJmzneZ7sZv8-_J2Mp1OSz9cSHH6K4oTGbC-xqqdOE"/>
+                   </span>
+
+                  <i class=" back-logo fa fa-5x fa-user"></i>
+               </div>
+            </div>
+         </div>
+      </div>
+      </div>
+
+</div>
+
+ 
+
+<!-- Extra Section ( if needed) -->
+ <div class="contactvorm row whiteback somepad">
+    <div class="col-sm-4 cabin whiteback slightlybigger ">
+          <p><i class="fa fa-2x fa-envelope"></i> Placeholder 1</p>
+       
+    </div>
+    <div class="col-sm-4 cabin whiteback slightlybigger ">
+          <p><i class="fa fa-2x fa-phone"></i> Placeholder 2</p>
+       
+    </div>
+    <div class="col-sm-4 cabin whiteback slightlybigger ">
+          <p><i class="fa fa-2x fa-map-marker"></i> Placeholder 3<br>4 Breakpoint exmaple<br>
+      Breakpoint example 2</p>
+       
+    </div>
+    </div>
+ 
+ </div>
+ </div>
+ 
+ <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> -->
+
+</body>
+
+</html>
