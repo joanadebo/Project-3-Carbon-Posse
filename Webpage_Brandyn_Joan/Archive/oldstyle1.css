@@ -131,7 +131,7 @@ body {
 
 .sloganadj {
    text-align: center;
-   position: center;
+   
    margin-bottom: 2em;
    font-family: cabin, sans-serif;
    color: white;
@@ -165,7 +165,6 @@ body {
 
 .whenyouvisit {
    padding-top: 25px;
-
 }
 
 

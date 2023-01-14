@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en">  
 
 <head>
   <meta charset="UTF-8">
@@ -14,7 +14,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script> -->
 
    <!-- Dummy TEST -->
-  <script type="module" src="emissions.js"></script>
+  <script src="emissions.js"></script>
 
   <!-- <script src="js/jquery-1.11.0.min.js"></script> -->
 
@@ -32,7 +32,7 @@
 
   <!-- Chart.js -->
   <script
-  type="module" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
+  src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
   </script>
 
 
@@ -106,7 +106,7 @@
        </div>
     </div>
   
-        <!-- Adding in page breaks -->
+       <!-- Adding in page breaks -->
     <br>
     <br>
     <br>
@@ -115,16 +115,19 @@
   <div>
    <div class="container-fluid whiteback ">
      <div class= "row" >
-         
-
+      
+       
         <div class="whenyouvisit slogan">
            <p>Chart 1 Stuff (Map Layers, Dropdown by Year): </p>
         </div>   
      </div> 
 
+      <div style="width: 800px;"><canvas id="ourChart"></canvas></div>
 
 
-    <div class= "row"  >
+
+
+    <!-- <div class= "row"  >
      <div class="col somepad">
         <div class=" flitskaart whitetext">
            <p class="ptext"><i class="  fa fa-4x fa-question"></i></p>
@@ -145,7 +148,7 @@
 
         <div class=" flitskaart3 whitetext">
            <p class="ptext3"><i class="  fa fa-5x fa-question"></i></p>
-        </div>
+        </div> -->
 
     </div>
       
@@ -155,7 +158,7 @@
    
 </div>
 
-  <!-- Adding in page breaks -->
+   <!-- Adding in page breaks -->
 <br>
 <br>
 <br>
@@ -164,124 +167,13 @@
       <div class="container-fluid whiteback ">
         <div class= "row" >
 
-           <!-- Chart 2 Top 10 Countries by Carbon Emissions: -->
+           <!-- Chart 2 Stuff (Top 10-20 Emissions by Country): -->
            <div class="whenyouvisit slogan">
-              <p>Countries with the Most Carbon Emissions in 2020: </p>
+              <p>Chart 2 Stuff (Top 10-20 Emissions by Country): </p>
            </div>   
         </div> 
-       <div class= "row col-med-6"  >
-         <canvas id="c" width="500" height="500"></canvas>
-         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script>
-         <script>
-           var ctx = document.getElementById("c").getContext("2d");
-           var data = {
-             labels: ["United States", "China", "Russia", "Germany", "United Kingdom", "Japan", "India", "France","Canada","Ukraine"],
-             datasets: [{
-               label: "Top 10 Countries by Carbon Emissions (2020)",
-               fillColor: "rgba(60,179,113,1)",
-               strokeColor: "rgba(60,179,113,1)",
-               pointColor: "rgba(60,179,113,1)",
-               pointStrokeColor: "#fff",
-               pointHighlightFill: "#fff",
-               pointHighlightStroke: "rgba(60,179,113,1)",
-               data: [417000000000, 236000000000, 1150000000000, 92635615097, 78161145636, 65625166916, 54416488997, 38728680794,33576743330, 30559156342],
-            }],
-
-            options: {
-                     responsive: true,
-                     scales: {
-                     xAxes: [ {
-                        // type: 'time',
-                        display: true,
-                        scaleLabel: {
-                           display: true,
-                           text: 'Country'
-                        }
-                        // ticks: {
-                        //    major: {
-                        //    fontStyle: 'bold',
-                        //    fontColor: '#FF0000'
-                        //    }
-                        // }
-                     } ],
-                     yAxes: [ {
-                        display: true,
-                        scaleLabel: {
-                           display: true,
-                           text: 'C02 Emissions (tons)'
-                        }
-                     } ]
-                  }
-
-
-
-           }};
-           var MyNewChart = new Chart(ctx).Bar(data);
-         </script>
-
-      <div class="whenyouvisit slogan">
-         <p>Countries with the Least Carbon Emissions in 2020:</p>
-      </div>  
-
-
-         <div class= "row col-med-6"  >
-            <canvas id="z" width="500" height="500"></canvas>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script>
-            <script>
-            var ctx = document.getElementById("z").getContext("2d");
-            var data = {
-               labels: ["Antartica", "Puerto Rico", "Tuvalu", "Niue", "St. Helena", "Wallis and Futuna", "Christmas Island", "Mountserrat","Kiribati","Cook Islands"],
-               datasets: [{
-                  label: "Bottom 10 Countries by Carbon Emissions (2020)",
-                  fillColor: "rgba(60,179,113,1)",
-                  strokeColor: "rgba(60,179,113,1)",
-                  pointColor: "rgba(60,179,113,1)",
-                  pointStrokeColor: "#fff",
-                  pointHighlightFill: "#fff",
-                  pointHighlightStroke: "rgba(60,179,113,1)",
-                  data: [153888, 208848, 278925, 290148, 379295, 507247, 1330032, 1618456, 2085306, 2195919],
-
-               }],
-                  options: {
-                     responsive: true,
-                     scales: {
-                     xAxes: [ {
-                        // type: 'time',
-                        display: true,
-                        scaleLabel: {
-                           display: true,
-                           text: 'Country'
-                        }
-                        // ticks: {
-                        //    major: {
-                        //    fontStyle: 'bold',
-                        //    fontColor: '#FF0000'
-                        //    }
-                        // }
-                     } ],
-                     yAxes: [ {
-                        display: true,
-                        scaleLabel: {
-                           display: true,
-                           text: 'C02 Emissions (tons)'
-                        }
-                     } ]
-                  }
-
-             }};
-            var MyNewChart = new Chart(ctx).Bar(data);
-            </script>
-
-
-        </div>
-          </div>
-       </div>
-     </div>
-     </div>
-     </div>
-
-
-        <!-- <div class="col somepad">
+       <div class= "row"  >
+        <div class="col somepad">
            <div class=" flitskaart whitetext">
               <p class="ptext"><i class="  fa fa-4x fa-heartbeat"></i></p>
            </div>
@@ -307,24 +199,24 @@
          
          </div>
 
-      </div> -->
+      </div>
       
    </div>
 </div>
 
  </div>
 
-
+   <!-- Adding in page breaks -->
  <br>
  <br>
  <br>
 
-
+   <!-- About Us Section -->
 <div class = "container-fluid"   >
 
    <div class="row">
       <div>
-         <p class="sloganadj-fluid"></p>
+         <p class="sloganadj-fluid">Meet your Engineers:</p>
       </div>
       <div class="col">
          <div class="circle-container">
