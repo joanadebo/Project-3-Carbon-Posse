@@ -56,125 +56,171 @@ info.onAdd = function() {
     return div;
   };
 
+function chooseColor(type) {
+    if (type == "Feature") return "green";
+    else return "black";
+}
 // Add the info legend to the map.
 info.addTo(map);
 
-// Use this link to get the GeoJSON data.
-var link = "resources/countries.geo.json";
+const geojson_url = "/api/v1.0/geoJSON";
 
-// Getting our GeoJSON data
-d3.json(link).then(function(data) {
+// L.geoJSON(geojson_url.responseJSON).addTo(map);
 
-    // Creating a GeoJSON layer with the retrieved data
-    L.geoJson(data, {
-        // Styling each feature (in this case, a neighborhood)
-        style: function(feature) {
-            return {
-                color: "green",
-                // Call the chooseColor() function to decide which color to color our neighborhood. (The color is based on the borough.)
-                fillColor: "green",
-                fillOpacity: 0.5,
-                weight: 1.5
-            };
-        },
+// L.geoJSON(geojson_url)
 
-        // This is called on each feature.
-        onEachFeature: function(feature, layer) {
-            // Set the mouse events to change the map styling.
-            layer.on({
-            // When a user's mouse cursor touches a map feature, the mouseover event calls this function, which makes that feature's opacity change to 90% so that it stands out.
-                mouseover: function(event) {
-                    layer = event.target;
-                    layer.setStyle({
-                    fillOpacity: 0.9
-                    });
-                },
-        
-            // When the cursor no longer hovers over a map feature (that is, when the mouseout event occurs), the feature's opacity reverts back to 50%.
-                mouseout: function(event) {
-                    layer = event.target;
-                    layer.setStyle({
-                    fillOpacity: 0.5
-                    });
-                },
+//     // Fetch the JSON data and console log it
+    d3.json(geojson_url).then(function(data) {
+        // Creating a GeoJSON layer with the retrieved data
+        L.geoJson(data, {
+            // Styling each feature (in this case, a neighborhood)
+            style: function (feature){
+                return {
+                    color: chooseColor(feature.type),
+                    // Call the chooseColor() function to decide which color to color our neighborhood. (The color is based on the borough.)
+                    fillColor: "green",
+                    fillOpacity: 0.5,
+                    weight: 1.5
+                };
+            },
+            // This is called on each feature.
+            onEachFeature: function(feature, layer) {
+                // Set the mouse events to change the map styling.
+                layer.on({
+                // When a user's mouse cursor touches a map feature, the mouseover event calls this function, which makes that feature's opacity change to 90% so that it stands out.
+                    mouseover: function(event) {
+                        layer = event.target;
+                        layer.setStyle({
+                        fillOpacity: 0.9
+                        });
+                    },
+                // When the cursor no longer hovers over a map feature (that is, when the mouseout event occurs), the feature's opacity reverts back to 50%.
+                    mouseout: function(event) {
+                        layer = event.target;
+                        layer.setStyle({
+                        fillOpacity: 0.5
+                        });
+                    },
+                // When a feature (country) is clicked, it enlarges to fit the screen.
+                    click: function(event) {
+                        map.fitBounds(event.target.getBounds());
+                    }
+                });
+                // Giving each feature a popup with information that's relevant to it, link to other d3.jsons at a later time
+                layer.bindPopup("<h1>" + feature.properties.name + "</h2>" + 'Estimated Population (2022):' + '<br>' + feature.properties.pop_est);
 
-            // When a feature (country) is clicked, it enlarges to fit the screen.
-                click: function(event) {
-                    myMap.fitBounds(event.target.getBounds());
-                }
-            });
+                    const API_BASE_URL = "/api/v1.0/";
+                // Fetch the JSON data and console log it
+                    d3.json(API_BASE_URL + "1750").then(data =>  {
 
-            // Giving each feature a popup with information that's relevant to it, link to other d3.jsons at a later time
-            layer.bindPopup("<h1>" + feature.properties.name + "</h2>");
+                        console.log(data)
+                        let html = "Country: " + data.country + "<br> C02 Emissions (in tons)" + data.co2_emission_in_tons
+                        newMarker.bindPopup(html);
 
-        }
+                                // Loop through the countries 
+                        var countries = feature.geometry.coordinates
+                        for (var i = 0; i < countries.length; i++) {
 
+                            // Create a new marker with the appropriate icon and coordinates.
+                            var newMarker = L.marker(countries);
+
+                            // Add the new marker to the appropriate layer.
+                            // newMarker.addTo(year_1750);
+                };
+                })
+                // const api_url = "/api/v1.0/1750";
+                // // Fetch the JSON data and console log it
+                // d3.json(api_url).then(data =>  {
+                //     newMarker.bindPopup("Country: " + feature.properties.name + "<br> C02 Emissions (in tons)" + data.co2_emission_in_tons);
+                // });
+            }
     }).addTo(map);
 
-    // Loop through the countries 
-    var countries = features.geometry.coordinates
-    for (var i = 0; i < countries.length; i++) {
-
-        // Create a new marker with the appropriate icon and coordinates.
-        var newMarker = L.marker(countries, {
-        });
-    }
+  });
 
 
+    // // Loop through the countries 
+    // var countries = feature.geometry.coordinates
+    // for (var i = 0; i < countries.length; i++) {
 
-    const api_url = "/api/v1.0/countries";
-    // Fetch the JSON data and console log it
-    d3.json(api_url).then(data =>  {
-        console.log(data);
-        newMarker.bindPopup("Country: " + country + "<br> C02 Emissions (in tons)" + co2_emission_in_tons);
-    });
+    //     // Create a new marker with the appropriate icon and coordinates.
+    //     var newMarker = L.marker(countries);
+    // }
 
-    const api_url_1750 = "/api/v1.0/1750";
-    // Fetch the JSON data and console log it
-    d3.json(api_url_1750).then(data_1 =>  {
-        console.log(data_1);
-        newMarker.bindPopup("Country: " + country + "<br> C02 Emissions (in tons)" + co2_emission_in_tons);
-    });
+    // const api_url = "/api/v1.0/countries";
+    // // Fetch the JSON data and console log it
+    // d3.json(api_url).then(data =>  {
+    //     console.log(data);
+    //     newMarker.bindPopup("Country: " + country + "<br> C02 Emissions (in tons)" + co2_emission_in_tons);
+    // });
 
-    const api_url_1800 = "/api/v1.0/1800";
-    // Fetch the JSON data and console log it
-    d3.json(api_url_1800).then(data_2 =>  {
-        console.log(data_2);
-        newMarker.bindPopup("Country: " + country + "<br> C02 Emissions (in tons)" + co2_emission_in_tons);
-    });
+    // const api_url_1750 = "/api/v1.0/1750";
+    // // Fetch the JSON data and console log it
+    // d3.json(api_url_1750).then(data_1 =>  {
+    //     console.log(data_1);
+    //     newMarker.bindPopup("Country: " + country + "<br> C02 Emissions (in tons)" + co2_emission_in_tons);
+    // });
 
-    const api_url_1850 = "/api/v1.0/1850";
-    // Fetch the JSON data and console log it
-    d3.json(api_url_1850).then(data_3 =>  {
-        console.log(data_3);
-        newMarker.bindPopup("Country: " + country + "<br> C02 Emissions (in tons)" + co2_emission_in_tons);
-    });
+    // const api_url_1800 = "/api/v1.0/1800";
+    // // Fetch the JSON data and console log it
+    // d3.json(api_url_1800).then(data_2 =>  {
+    //     console.log(data_2);
+    //     newMarker.bindPopup("Country: " + country + "<br> C02 Emissions (in tons)" + co2_emission_in_tons);
+    // });
 
-    const api_url_1900 = "/api/v1.0/1900";
-    // Fetch the JSON data and console log it
-    d3.json(api_url_1900).then(data_4 =>  {
-        console.log(data_4);
-        newMarker.bindPopup("Country: " + country + "<br> C02 Emissions (in tons)" + co2_emission_in_tons);
-    });
+    // const api_url_1850 = "/api/v1.0/1850";
+    // // Fetch the JSON data and console log it
+    // d3.json(api_url_1850).then(data_3 =>  {
+    //     console.log(data_3);
+    //     newMarker.bindPopup("Country: " + country + "<br> C02 Emissions (in tons)" + co2_emission_in_tons);
+    // });
 
-    const api_url_1950 = "/api/v1.0/1950";
-    // Fetch the JSON data and console log it
-    d3.json(api_url_1950).then(data_5 =>  {
-        console.log(data_5);
-        newMarker.bindPopup("Country: " + country + "<br> C02 Emissions (in tons)" + co2_emission_in_tons);
-    });
+    // const api_url_1900 = "/api/v1.0/1900";
+    // // Fetch the JSON data and console log it
+    // d3.json(api_url_1900).then(data_4 =>  {
+    //     console.log(data_4);
+    //     newMarker.bindPopup("Country: " + country + "<br> C02 Emissions (in tons)" + co2_emission_in_tons);
+    // });
 
-    const api_url_2000 = "/api/v1.0/2000";
-    // Fetch the JSON data and console log it
-    d3.json(api_url_2000).then(data_6 =>  {
-        console.log(data_6);
-        newMarker.bindPopup("Country: " + country + "<br> C02 Emissions (in tons)" + co2_emission_in_tons);
-    });
+    // const api_url_1950 = "/api/v1.0/1950";
+    // // Fetch the JSON data and console log it
+    // d3.json(api_url_1950).then(data_5 =>  {
+    //     console.log(data_5);
+    //     newMarker.bindPopup("Country: " + country + "<br> C02 Emissions (in tons)" + co2_emission_in_tons);
+    // });
 
-    const api_url_2020 = "/api/v1.0/2020";
-    // Fetch the JSON data and console log it
-    d3.json(api_url_2020).then(data_7 =>  {
-        console.log(data_7);
-        newMarker.bindPopup("Country: " + country + "<br> C02 Emissions (in tons)" + co2_emission_in_tons);
-    });
-});
+    // const api_url_2000 = "/api/v1.0/2000";
+    // // Fetch the JSON data and console log it
+    // d3.json(api_url_2000).then(data_6 =>  {
+    //     console.log(data_6);
+    //     newMarker.bindPopup("Country: " + country + "<br> C02 Emissions (in tons)" + co2_emission_in_tons);
+    // });
+
+    // const api_url_2020 = "/api/v1.0/2020";
+    // // Fetch the JSON data and console log it
+    // d3.json(api_url_2020).then(data_7 =>  {
+    //     console.log(data_7);
+    //     newMarker.bindPopup("Country: " + country + "<br> C02 Emissions (in tons)" + co2_emission_in_tons);
+    // });
+
+// // Top ten chart 
+//     const api_url = "/api/v1.0/top10";
+//     // Fetch the JSON data and console log it
+//     d3.json(api_url).then(data =>  {
+//         console.log(data);
+
+//         var xValues = data.country;
+//         var yValues = data.co2_emission_in_tons;
+        
+
+//         new Chart("myChart", {
+//         type: "bar",
+//         data: {
+//             labels: xValues,
+//             datasets: [{
+//             backgroundColor: 'green',
+//             data: yValues
+//             }]
+//         },
+//         });
+//     });
