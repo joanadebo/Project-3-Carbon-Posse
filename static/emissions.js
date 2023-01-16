@@ -11,7 +11,7 @@ $(document).ready(function(){
          var div = $(".flitskaart");
          div.animate({height: '300px', opacity: '0.4'}, "slow");
          div.animate({width: '200px', opacity: '0.8'}, "slow");
-           $(".ptext").text("Global sea levels are rising faster today than ever before...average sea level has risen 8 to 9 inches since 1880.");
+           $(".ptext").text("Greenhouse gases, which trap heat in the earth's atmosphere, can absorb infrared light contributing to global warming. CO2 emissions account for 79% of the greenhouse gases that the US releases into the atmosphere. ");
            
            
          
@@ -62,7 +62,7 @@ $(document).ready(function(){
          var div = $(".flitskaart1");
          div.animate({height: '400px', opacity: '0.4'}, "slow");
          div.animate({width: '200px', opacity: '0.8'}, "slow");
-           $(".ptext1").text("The main sources of CO2 emissions in the United States are transportation, agriculture, electricity, and industry. Which uses the combustion of fossil fuels such as gasoline and diesel to foster our everyday needs.");
+           $(".ptext1").text("Human activities have been changing this carbon cycle by increasing the amount of CO2 in the atmosphere and directly affecting the capacity of natural sinks, such as soils and forests, to absorb and store CO2.  ");
          
            infoBlock1 = true;
            var div = $(".flitskaart2");
@@ -106,7 +106,7 @@ $(document).ready(function(){
          var div = $(".flitskaart2");
          div.animate({height: '400px', opacity: '0.4'}, "slow");
          div.animate({width: '200px', opacity: '0.8'}, "slow");
-           $(".ptext2").text("Human activities are changing the carbon cycle by increasing the amount of CO2 in the atmosphere and by affecting the capacity of natural sinks, such as soils and forests, to absorb and store CO2.");
+           $(".ptext2").text("The main sources of CO2 emissions in the United States are transportation, electricity, and industry. Which uses the combustion of fossil fuels such as gasoline and diesel to foster our everyday needs.");
          
            infoBlock2 = true;
            
@@ -152,7 +152,7 @@ $(document).ready(function(){
          var div = $(".flitskaart3");
          div.animate({height: '400px', opacity: '0.4'}, "slow");
          div.animate({width: '180px', opacity: '0.8'}, "slow");
-           $(".ptext3").text("Greenhouse gases, which trap heat in the earth's atmosphere, can absorb infrared light contributing to global warming. CO2 emissions account for 79% of the greenhouse gases that the US releases into the atmosphere.");
+           $(".ptext3").text("Global sea levels are rising faster today than ever before...average sea levels has risen 8 to 9 inches since 1880.");
            infoBlock3 = true;
            
            var div = $(".flitskaart1");
