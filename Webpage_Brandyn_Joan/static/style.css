@@ -2,6 +2,15 @@
 
 
 
+html,
+body,
+#map-id {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+
 body {
   padding-top: 5em;
   background-color: #4d8a3c;
@@ -156,7 +165,7 @@ body {
 }
 
 .slightlybigger {
-   font-size: 1.5em;
+   font-size: 2em;
 }
 
 .whiteback{
@@ -167,9 +176,6 @@ body {
    padding-top: 25px;
 
 }
-
-
-
 
 
 
@@ -212,7 +218,7 @@ body {
 }
 
 .ptext{
-   font-size: 1.5em;
+   font-size: 1em;
    margin: auto;
    position: relative;
   top: 50%;
@@ -221,7 +227,7 @@ body {
    padding-right: 5px;
 }
 .ptext1{
-   font-size: 1.5em;
+   font-size: 1.2em;
    margin: auto;
    position: relative;
   top: 50%;
@@ -230,7 +236,7 @@ body {
    padding-right: 5px;
 }
 .ptext2{
-   font-size: 1.5em;
+   font-size: 1.2em;
    margin: auto;
    position: relative;
   top: 50%;
@@ -239,7 +245,7 @@ body {
    padding-right: 5px;
 }
 .ptext3{
-   font-size: 1.5em;
+   font-size: 1.2em;
    margin: auto;
    position: relative;
   top: 50%;
@@ -274,3 +280,4 @@ body {
    height:100%;
    object-fit: cover;
  }
+
