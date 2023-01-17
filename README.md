@@ -1,7 +1,4 @@
-
 # Project-3-Group-14: Visualizing Data
-
-# Team Name: Carbon_Posse
 
 ## Project Background:
 
