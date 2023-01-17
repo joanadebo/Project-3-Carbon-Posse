@@ -1,10 +1,8 @@
-# Project-3-Group-14: Visualizing Data
-
-
-## Project Background:
+# CO₂ Emissions by Country Over Time: Visualizing Data
 
 ![image](https://user-images.githubusercontent.com/95774386/210461637-9d48d0f5-fd45-4d93-87bf-f29edfc99241.png)
 
+## Project Background:
 Although many air pollutants resulting from human activity contribute to climate change (including methane (CH4), nitrous oxide (N2O), black carbon and others), carbon dioxide continues to be the primary contributor. While carbon dioxide is an essential heat-radiating component of the Earth's atmosphere, too much of it intensifies the natural greenhouse effect resulting in higher temperatures. These superfluous carbon dioxide (CO₂) emissions are a direct result of energy and material production from a variety of sources and fuel types, including coal, oil, gas, cement production, and gas flaring. As both domestic and global energy systems have developed through centuries and decades, so has the spatial and temporal distribution of the contribution of diverse fuel sources to CO₂ emissions. In this project, we depict the breakdown of CO₂ emissions by country overtime, along with historical and recent data on the major CO₂ emitters and comparisons when per capita adjustments are taken into account.
 
 ## Project Structure:
@@ -50,4 +48,5 @@ https://www.ourworldindata.org/emissions-by-fuel
 
 https://www.climate.gov/news-features/understanding-climate/climate-change-atmospheric-carbon-dioxide
 
-https://www.ces.fau.edu/nasa/module-4/causes/sources-carbon-dioxide.php#:~:text=During%20combustion%20or%20burning%2C%20carbon,and%20water%20when%20they%20burn
+https://www.ces.fau.edu/nasa/module-4/causes/sources-carbon-dioxide.php#:~:text=During%20combustion%20or%20burning%2C%20carbon,and%20water%20when%20they%20burn.
+
