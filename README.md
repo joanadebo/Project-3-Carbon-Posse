@@ -1,9 +1,9 @@
 # CO₂ Emissions by Country Over Time: Visualizing Data
 
-![background_image]([https://user-images.githubusercontent.com/95774386/210461637-9d48d0f5-fd45-4d93-87bf-f29edfc99241.png](https://raw.githubusercontent.com/joanadebo/worldco2emissions/main/Images/background.png))
+![background_image](Images/background.png)
 
 ## Project Structure:
-![db_image]([[https://user-images.githubusercontent.com/95774386/210461637-9d48d0f5-fd45-4d93-87bf-f29edfc99241.png](https://raw.githubusercontent.com/joanadebo/worldco2emissions/main/Images/background.png](https://raw.githubusercontent.com/joanadebo/worldco2emissions/main/Images/db_diagram2.png)))
+![db_image](Images/db_diagram2.png)
 
 ## Additional Background:
 Although many air pollutants resulting from human activity contribute to climate change (including methane (CH4), nitrous oxide (N2O), black carbon and others), carbon dioxide continues to be the primary contributor. While carbon dioxide is an essential heat-radiating component of the Earth's atmosphere, too much of it intensifies the natural greenhouse effect resulting in higher temperatures. These superfluous carbon dioxide (CO₂) emissions are a direct result of energy and material production from a variety of sources and fuel types, including coal, oil, gas, cement production, and gas flaring. As both domestic and global energy systems have developed through centuries and decades, so has the spatial and temporal distribution of diverse fuel sources contributing to CO₂ emissions. In this project, we depict the breakdown of CO₂ emissions by country overtime, along with historical and recent data on the major CO₂ emitters.
