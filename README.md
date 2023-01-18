@@ -1,4 +1,4 @@
-# CO₂ Emissions by Country Over Time: Visualizing Data
+# Visualizing Data: Geographic CO₂ Emissions Since 1750
 
 ![background_image](Images/background.png)
 
