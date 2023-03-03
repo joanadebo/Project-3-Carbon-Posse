@@ -10,14 +10,14 @@ import json
 #################################################
 # Database Setup
 #################################################
-DB_NAME = "Emissions"
+DB_NAME = "Emissions_CO2"
 DB_USER = "postgres"
-DB_PASS = "rossygossy64"
+DB_PASS = "postgres"
 DB_HOST = "localhost"
 DB_PORT = "5432"
  
     
-engine = create_engine("postgresql://postgres:rossygossy64@localhost:5432/Emissions")
+engine = create_engine("postgresql://postgres:postgres@localhost:5432/Emissions_CO2")
 conn = psycopg2.connect(database=DB_NAME,
                             user=DB_USER,
                             password=DB_PASS,
