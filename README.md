@@ -14,7 +14,7 @@ After reviewing many potential datasets, we chose to work with a Kaggle CSV that
 ### Project Steps
 1. Run cleaning_c02_df Jupyter notebook (this cleans your dataset)
 2. Load data into SQL database using Creating_Engine Jupyter notebook (IMPORTANT: Ensure to create all column headers in lowercase format and update the pgadmin username and passwords with your own. Your code will not run otherwise!)
-*3. Run the app.py file through your terminal to establish the flask connection and launch the website. 
+3. Run the app.py file through your terminal to establish the flask connection and launch the website. 
 
 
 
