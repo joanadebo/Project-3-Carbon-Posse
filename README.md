@@ -11,6 +11,13 @@ Although many air pollutants resulting from human activity contribute to climate
 ## Methodology:
 After reviewing many potential datasets, we chose to work with a Kaggle CSV that houses data on regional carbon dioxide emissions (measured in tons) starting at the halfway point of the 18th century, the beginning of the industrial revolution. We first reviewed and cleaned this dataset to eliminate irrelevant categories (such as calling codes and country abbreviations) and decided to structure our data into six cumulative 50-year segments starting with 1750. The most recent year included in our data set was 2020 so a seventh layer was added which spans only twenty years (2000 - 2020). After initially creating distinct API routes for each of these seven selected years, we were able to abridge our code by refining our SQL queries. **We also incorporated the chart.js library to create interactive bar charts that display exact emission values for the top and bottom contributing countries via mouse over event elements.** 
 
+### Project Steps
+* 1) Run cleaning_c02_df Jupyter notebook (this cleans your dataset)
+* 2) Load data into SQL database using Creating_Engine Jupyter notebook (IMPORTANT: Ensure to create all column headers in lowercase format and update the pgadmin username and passwords with your own. Your code will not run otherwise!)
+* 3) Run the app.py file through your terminal to establish the flask connection and launch the website. 
+
+
+
 ## Objective:
 The primary goal of our project was to display our cleaned data via an intuitive, interactive map-based data visualization within our own website. We chose to house our data in a PostgresSQL database using pgAdmin and SQLAlchemy for Python. Our data was then read into our code using Python Flask API routes. Leaflet, an open-source Javascript library was used along with other HTML and CSS components to further edit our final product. Additionally, geoJSON files containing latitude and longitude measurements (for each of the 220 countries included in our dataset) were pulled from a public GitHub repository and read into our app.py via the previously mention API routes.  
 
